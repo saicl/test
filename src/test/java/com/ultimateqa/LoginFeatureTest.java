@@ -1,9 +1,14 @@
+package com.ultimateqa;
+
+import com.ultimateqa.pages.CartPageObject;
+import com.ultimateqa.pages.CheckoutPage;
+import com.ultimateqa.pages.LoginPage;
+import com.ultimateqa.pages.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,7 +21,7 @@ public class LoginFeatureTest {
     private WebDriver driver;
     private LoginPage loginPage;
     private ProductsPage productsPage;
-    private CartPageObject CartPageObject;
+    private com.ultimateqa.pages.CartPageObject CartPageObject;
 
     @BeforeClass
     public static void beforeClass(){
@@ -48,7 +53,7 @@ public class LoginFeatureTest {
     public void shouldlogin() {
 
         driver.navigate().to("https://www.saucedemo.com/");
-//        LoginPage loginPage = new LoginPage(driver);
+//        com.ultimateqa.pages.LoginPage loginPage = new com.ultimateqa.pages.LoginPage(driver);
         loginPage.login();
 
     }
@@ -56,7 +61,7 @@ public class LoginFeatureTest {
     @Test
     public void productsPageTest() {
         driver.navigate().to("https://www.saucedemo.com/inventory.html");
-//        ProductsPage productsPage = new ProductsPage(driver);
+//        com.ultimateqa.pages.ProductsPage productsPage = new com.ultimateqa.pages.ProductsPage(driver);
         productsPage.addToBasket();
     }
 
@@ -71,7 +76,7 @@ public class LoginFeatureTest {
     public void test5() {
 //        driver.navigate().to("https://www.saucedemo.com/cart");
          CartPageObject.open();
-//        CartPageObject cartPageObject = new CartPageObject(driver);
+//        com.ultimateqa.pages.CartPageObject cartPageObject = new com.ultimateqa.pages.CartPageObject(driver);
         CartPageObject.clickByCheckoutButton();
     }
 
