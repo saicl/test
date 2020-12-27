@@ -37,5 +37,14 @@ public class LoginPage {
         getLoginButton().click();
     }
 
+    public void login(String userName,String password){
+        getFiledUserName().sendKeys(userName);
+        driver.findElement(By.xpath("//*[@id='login-button']/../input[2]")).sendKeys(password);
+//        driver.findElement(By.xpath("//*[@id='login-button']")).click();
+        getLoginButton().click();
+
+
+    }
+
 
 }
