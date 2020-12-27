@@ -36,5 +36,8 @@ public class ProductsPage {
         driver.get("https://www.saucedemo.com/inventory.html");
     }
 
+    public void goTocard(){
+        getBackPackAddButton().click();
+    }
 
 }
